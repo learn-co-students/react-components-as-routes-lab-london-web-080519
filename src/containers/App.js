@@ -4,16 +4,24 @@ import {
   Route
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import Home from '../components/Home';
-import Actors from '../components/Actors';
-import Directors from '../components/Directors';
-import Movies from '../components/Movies';
+import routes from '../config/routes';
 
 
 const App = (props) => {
   return (
     <Router>
-      {/*{code here}*/}
+      <div>
+        <NavBar/>
+        {
+          routes.map(route => (
+            <Route
+              exact 
+              path={route.path}
+              component={route.component}
+            />
+          ))
+        }
+      </div>
     </Router>
   );
 };
