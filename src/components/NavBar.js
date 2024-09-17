@@ -1,12 +1,29 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+const link = {
+  width: '100px',   
+  padding: '12px',
+  margin: '0 6px 6px',
+  background: '#1F4068',
+  textDecoration: 'none',
+  color: 'white',
+  borderRadius: '5px'
+}
+
+
 const NavBar = () => {
   return (
-    <div>
+    <div className='navbar'>
       {/*{code here}*/}
+      <NavLink to='/' exact style={link}>Home</NavLink>
+      <NavLink to='/movies' exact style={link}>Movies</NavLink>
+      <NavLink to='/directors' exact style={link}>Directors</NavLink>
+      <NavLink to='/actors' exact style={link}>Actors</NavLink>
+
     </div>
   );
 };
 
 export default NavBar;
+
